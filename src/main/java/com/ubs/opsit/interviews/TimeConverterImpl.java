@@ -1,8 +1,8 @@
-package com.springboot.webservices.services;
+package com.ubs.opsit.interviews;
 
 import java.util.Arrays;
 
-public class TimeConverterImpl {
+public class TimeConverterImpl implements TimeConverter{
 
     private static final String NEW_LINE_SEPARATOR = "\n";
     private static final int TOTAL_LIGHTS_IN_FIRST_ROW = 4;
@@ -10,7 +10,8 @@ public class TimeConverterImpl {
     private static final int TOTAL_LIGHTS_IN_THIRD_ROW = 11;
     private static final int TOTAL_LIGHTS_IN_FOURTH_ROW = 4;
 
-    String convertTime(String aTime){
+    @Override
+    public String convertTime(String aTime){
         if(aTime == null || aTime.isEmpty()) {
             throw new IllegalArgumentException("Please provide time");
         }
