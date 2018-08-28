@@ -42,7 +42,7 @@ public class TimeConverterImpl implements TimeConverter{
 
     private String buildOutputRows(Integer hours, Integer minutes, Integer seconds) {
 
-        String zeroLine = (seconds % 2 == 0) ? "Y" : "0";
+        String zeroLine = (seconds % 2 == 0) ? "Y" : "O";
 
         String firstLine = populateLine(TOTAL_LIGHTS_IN_FIRST_ROW, hours / 5,"R");
         String secondLine = populateLine( TOTAL_LIGHTS_IN_SECOND_ROW, hours % 5,"R");
@@ -59,7 +59,7 @@ public class TimeConverterImpl implements TimeConverter{
             line.append(lampColour);
         }
         for(;offLights > 0 ;offLights--){
-            line.append("0");
+            line.append("O");
         }
         return line.toString();
     }
